@@ -124,7 +124,7 @@ public class BankApplication extends JFrame {
 		JPanel buttonPanel = new JPanel(new GridLayout(1, 4));
 
 		nextItemButton = new JButton(new ImageIcon("next.png"));
-		prevItemButton = new JButton(new ImageIcon("previous.png"));
+		prevItemButton = new JButton(new ImageIcon("prev.png"));
 		firstItemButton = new JButton(new ImageIcon("first.png"));
 		lastItemButton = new JButton(new ImageIcon("last.png"));
 		
