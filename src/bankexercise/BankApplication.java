@@ -210,6 +210,7 @@ public class BankApplication extends JFrame {
 	
 		setOverdraft.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
+				if(!table.isEmpty()) {
 				if(table.get(currentItem).getAccountType().trim().equals("Current")){
 					String newOverdraftStr = JOptionPane.showInputDialog(null, "Enter new Overdraft", JOptionPane.OK_CANCEL_OPTION);
 					overdraftTextField.setText(newOverdraftStr);
@@ -218,6 +219,7 @@ public class BankApplication extends JFrame {
 				else
 					JOptionPane.showMessageDialog(null, "Overdraft only applies to Current Accounts");
 			
+			}
 			}
 		});
 	
@@ -368,11 +370,11 @@ public class BankApplication extends JFrame {
 		
 		setInterest.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				
+				if(!table.isEmpty()) {
 				 String interestRateStr = JOptionPane.showInputDialog("Enter Interest Rate: (do not type the % sign)");
 				 if(interestRateStr!=null)
 					 interestRate = Double.parseDouble(interestRateStr);
-			
+				}
 			}
 		});
 		
