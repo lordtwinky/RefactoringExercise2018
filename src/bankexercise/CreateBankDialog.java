@@ -204,7 +204,6 @@ public class CreateBankDialog extends JFrame {
 					}
 				}
 				else JOptionPane.showMessageDialog(null, "Please make sure all fields have values, and Account Number is a unique 8 digit number");
-				dispose();
 			}
 		});
 		
