@@ -525,14 +525,14 @@ public class BankApplication extends JFrame {
 		withdraw.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
 				String accNum = JOptionPane.showInputDialog("Account number to withdraw from: ");
-				String toWithdraw = JOptionPane.showInputDialog("Account found, Enter Amount to Withdraw: ");
-				boolean found;
+				
+				boolean found = false;
 				
 				for (Map.Entry<Integer, BankAccount> entry : table.entrySet()) {
 					
 
 					if(accNum.equals(entry.getValue().getAccountNumber().trim())){
-						
+						String toWithdraw = JOptionPane.showInputDialog("Account found, Enter Amount to Withdraw: ");
 						found = true;
 						
 						if(entry.getValue().getAccountType().trim().equals("Current")){
@@ -553,6 +553,8 @@ public class BankApplication extends JFrame {
 						}
 					}					
 				}
+				if(!found)
+					JOptionPane.showMessageDialog(null, "Account number " + accNum + " not found.");
 			}
 		});
 		
