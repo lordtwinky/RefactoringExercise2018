@@ -223,7 +223,7 @@ public class BankApplication extends JFrame {
 	
 		ActionListener first = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				if(!table.isEmpty()) {
 				saveOpenValues();
 				
 				currentItem=0;
@@ -232,10 +232,12 @@ public class BankApplication extends JFrame {
 				}
 				displayDetails(currentItem);
 			}
+			}
 		};
 		
 		ActionListener next = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				saveOpenValues();
 				// No next if at end of list.
 				if (currentItem != (table.size()-1)) {
@@ -244,14 +246,16 @@ public class BankApplication extends JFrame {
 					while(!table.containsKey(currentItem) ){
 						currentItem++;
 					}
-					displayDetails(currentItem);			
-				}				
-			}
+					displayDetails(currentItem);	
+					
+				}		
+				}
+			
 		};
 		
 		ActionListener next1 = new ActionListener(){
 			public void actionPerformed(ActionEvent e){
-				
+				if(!table.isEmpty()) {
 				ArrayList<Integer> keyList = new ArrayList<Integer>();
 				int i=0;
 		
@@ -273,13 +277,14 @@ public class BankApplication extends JFrame {
 					}
 					displayDetails(currentItem);			
 			}
+			}
 		};
 		
 		
 
 		ActionListener prev = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				if(!table.isEmpty()) {
 				ArrayList<Integer> keyList = new ArrayList<Integer>();
 				int i=0;
 		
@@ -301,10 +306,12 @@ public class BankApplication extends JFrame {
 				}
 				displayDetails(currentItem);				
 			}
+			}
 		};
 	
 		ActionListener last = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				if(!table.isEmpty()) {
 				saveOpenValues();
 				
 				currentItem =29;
@@ -315,6 +322,7 @@ public class BankApplication extends JFrame {
 				}
 				
 				displayDetails(currentItem);
+			}
 			}
 		};
 		
