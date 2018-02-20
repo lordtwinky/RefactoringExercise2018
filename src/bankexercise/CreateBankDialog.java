@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -50,11 +51,11 @@ public class CreateBankDialog extends JFrame {
 	JLabel accountIDLabel, accountNumberLabel, firstNameLabel, surnameLabel, accountTypeLabel, balanceLabel, overdraftLabel;
 	
 	
-	JComboBox comboBox;
+	JComboBox<String> comboBox;
 	JTextField accountNumberTextField;
 	final JTextField firstNameTextField, surnameTextField, accountTypeTextField, balanceTextField, overdraftTextField;
 	
-	CreateBankDialog(HashMap accounts) {
+	CreateBankDialog(HashMap<Integer, BankAccount> accounts) {
 		
 		super("Add Bank Details");
 		
@@ -66,7 +67,7 @@ public class CreateBankDialog extends JFrame {
 		
 		String[] comboTypes = {"Current", "Deposit"};
 		
-		final JComboBox comboBox = new JComboBox(comboTypes);
+		final JComboBox<String> comboBox = new JComboBox<String>(comboTypes);
 		
 		
 		accountNumberLabel = new JLabel("Photograph file name: ");
@@ -161,6 +162,8 @@ public class CreateBankDialog extends JFrame {
 							 }
 						
 						if(!accNumTaken){
+							
+							if(Pattern.matches("[a-zA-Z]+", surname) &&  Pattern.matches("[a-zA-Z]+", firstName)) {
 						
 						
 							BankAccount account = new BankAccount(randNumber, accountNumber, surname, firstName, accountType, 0.0, 0.0);
@@ -176,6 +179,10 @@ public class CreateBankDialog extends JFrame {
 							table.put(hash, account);
 							JOptionPane.showMessageDialog(null, "Account created successfully");
 							dispose();
+							}
+							else {
+								JOptionPane.showMessageDialog(null, "First name and surname must only contain letters");
+							}
 						}
 						else{
 							JOptionPane.showMessageDialog(null, "Account Number must be unique");
