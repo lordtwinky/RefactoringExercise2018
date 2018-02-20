@@ -194,6 +194,8 @@ public class CreateBankDialog extends JFrame {
 								hash = hash+1;
 							}
 							table.put(hash, account);
+							JOptionPane.showMessageDialog(null, "Account created successfully");
+							dispose();
 						}
 						else{
 							JOptionPane.showMessageDialog(null, "Account Number must be unique");
