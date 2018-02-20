@@ -517,8 +517,11 @@ public class BankApplication extends JFrame {
 						//balanceTextField.setText(entry.getValue().getBalance()+"");
 					}
 				}
-				if (!found)
+				if (!found && accNum != null)
 					JOptionPane.showMessageDialog(null, "Account number " + accNum + " not found.");
+				if(accNum == null){
+					JOptionPane.showMessageDialog(null, "Cancelled");
+				}
 			}
 		});
 		
@@ -553,8 +556,11 @@ public class BankApplication extends JFrame {
 						}
 					}					
 				}
-				if(!found)
+				if (!found && accNum != null)
 					JOptionPane.showMessageDialog(null, "Account number " + accNum + " not found.");
+				if(accNum == null){
+					JOptionPane.showMessageDialog(null, "Cancelled");
+				}
 			}
 		});
 		
