@@ -326,14 +326,24 @@ public class BankApplication extends JFrame {
 				if(currentItem > 0) {
 							table.remove(currentItem);
 							JOptionPane.showMessageDialog(null, "Account Deleted");
-							
+							if(currentItem > 1) {
 
 							currentItem=0;
 							while(!table.containsKey(currentItem)){
 								currentItem++;
 							}
 							displayDetails(currentItem);
-				}
+							}
+							else {
+								accountNumberTextField.setText("");
+								accountIDTextField.setText("");
+								surnameTextField.setText("");
+								firstNameTextField.setText("");
+								accountTypeTextField.setText("");
+								balanceTextField.setText("");
+								overdraftTextField.setText("");
+							}
+						}
 			}
 		});
 		
