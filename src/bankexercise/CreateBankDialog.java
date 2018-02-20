@@ -1,12 +1,12 @@
 package bankexercise;
 
 import java.awt.BorderLayout;
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 import java.util.Random;
 
@@ -22,7 +22,7 @@ import net.miginfocom.swing.MigLayout;
 
 public class CreateBankDialog extends JFrame {
 
-	
+	private static final long serialVersionUID = 1L;
 	private final static int TABLE_SIZE = 29;
 	Random rand = new Random();
 	
@@ -63,12 +63,6 @@ public class CreateBankDialog extends JFrame {
 		setLayout(new BorderLayout());
 		
 		JPanel dataPanel = new JPanel(new MigLayout());
-		
-		
-		
-		
-		
-		
 		
 		String[] comboTypes = {"Current", "Deposit"};
 		
@@ -135,27 +129,13 @@ public class CreateBankDialog extends JFrame {
 		
 		addButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
-				
+
 				String accountNumber = accountNumberTextField.getText();
-				
-				
-							
-				
+
 				String surname = surnameTextField.getText();
 				String firstName = firstNameTextField.getText();
 			
 				String accountType = comboBox.getSelectedItem().toString();
-				
-				String balanceStr = balanceTextField.getText();
-				String overdraftStr = overdraftTextField.getText();
-				
-				
-
-				double balance;
-				double overdraft;
-				
 		
 				if (accountNumber != null && accountNumber.length()==8 && surname != null && firstName != null && accountType != null) {
 					try {
