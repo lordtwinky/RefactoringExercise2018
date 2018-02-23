@@ -616,12 +616,8 @@ public class BankApplication extends JFrame {
 		int returnVal = fc.showOpenDialog(null);
 		 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-
-        } else {
-                }
-
-			
-		      try // open file
+        	
+        	 try // open file
 		      {
 		    	  if(fc.getSelectedFile()!=null)
 		    		  input = new RandomAccessFile( fc.getSelectedFile(), "r" );
@@ -630,6 +626,13 @@ public class BankApplication extends JFrame {
 		      {
 		    	  JOptionPane.showMessageDialog(null, "File Does Not Exist.");
 		      } // end catch
+
+        } else {
+        	JOptionPane.showMessageDialog(null, "Save cancelled by user");
+                }
+
+			
+		     
 			
 	   } // end method openFile
 	
