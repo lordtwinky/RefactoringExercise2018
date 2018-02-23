@@ -436,10 +436,6 @@ public class BankApplication extends JFrame {
 				}
 				else if(answer == JOptionPane.NO_OPTION)
 					dispose();
-				else if(answer==0)
-					;
-				
-				
 				
 			}
 		});	
