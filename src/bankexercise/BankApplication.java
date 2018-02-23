@@ -672,11 +672,9 @@ public class BankApplication extends JFrame {
         
      	    
 	         try {
-	        	 if(fc.getSelectedFile()==null){
-	        		 JOptionPane.showMessageDialog(null, "Cancelled");
-	        	 }
-	        	 else
+	        	 if(fc.getSelectedFile()!=null){
 	        		 output = new RandomAccessFile(fc.getSelectedFile(), "rw" );
+	        	 } 		 
 			} catch (FileNotFoundException e) {
 				
 				e.printStackTrace();
